@@ -5,6 +5,8 @@ Language parsing rules patch (PHP5/CSS) for Function List plugin.
 
 This will make Function List looks like a great code explorer such as the Eclipse Outline View ! [See screenshot here](http://www.geoffray.be/blog/php/patch-php5-pour-npp-function-list)
 
+This fork add support for Slim Framwork routes parsing (Slim is a php RESTful micro-framework : http://slimframework.com/)
+
 Note: version 1.0 only works since **Notepad++ 6.x** !
 
 ![function list](http://www.geoffray.be/blog/img/functionlist-patch.png)
@@ -34,6 +36,18 @@ If you already have some custom parsing rules and want to keep them, don't overw
         </Group>
         <Group name="INTERFACE" subgroup="" icon="0" child="0" autoexp="4" matchcase="0" fendtobbeg="" bbegtobend="\{" keywords="">
             <Rules regexbeg="^\s*interface\s+" regexfunc="\w+" regexend="" bodybegin="\{" bodyend="\}" sep="" />
+        </Group>
+        <Group name="SLIMROUTE GET" subgroup="" icon="26" child="26" autoexp="4" matchcase="0" fendtobbeg="" bbegtobend="" keywords="">
+            <Rules regexbeg='\$.+[-][&gt;]get*\([&apos;&quot;]' regexfunc="[\w./-:]+" regexend="" bodybegin="\{" bodyend="\}\)\;" sep=";" />
+        </Group>
+        <Group name="SLIMROUTE POST" subgroup="" icon="24" child="24" autoexp="4" matchcase="0" fendtobbeg="" bbegtobend="" keywords="">
+            <Rules regexbeg='\$.+[-][&gt;]post*\([&apos;&quot;]' regexfunc="[\w./-:]+" regexend="" bodybegin="\{" bodyend="\}\)\;" sep=";" />
+        </Group>
+        <Group name="SLIMROUTE PUT" subgroup="" icon="25" child="25" autoexp="4" matchcase="0" fendtobbeg="" bbegtobend="" keywords="">
+            <Rules regexbeg='\$.+[-][&gt;]put*\([&apos;&quot;]' regexfunc="[\w./-:]+" regexend="" bodybegin="\{" bodyend="\}\)\;" sep=";" />
+        </Group>
+        <Group name="SLIMROUTE DELETE" subgroup="" icon="27" child="27" autoexp="4" matchcase="0" fendtobbeg="" bbegtobend="" keywords="">
+            <Rules regexbeg='\$.+[-][&gt;]delete*\([&apos;&quot;]' regexfunc="[\w./-:]+" regexend="" bodybegin="\{" bodyend="\}\)\;" sep=";" />
         </Group>
         <Group name="CONSTANT" subgroup="" icon="8" child="8" autoexp="0" matchcase="0" fendtobbeg="" bbegtobend="" keywords="">
             <Rules regexbeg="^\s*const\s+" regexfunc="[\w_]+" regexend="" bodybegin="" bodyend="$" sep="" />
