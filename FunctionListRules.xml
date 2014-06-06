@@ -412,10 +412,24 @@
             <Rules regexbeg="^\s*use\s+" regexfunc="[\w\\]+" regexend="[\w\s]*;$" bodybegin="" bodyend="" sep="" />
         </Group>
         <Group name="CLASS" subgroup="" icon="1" child="1" autoexp="4" matchcase="0" fendtobbeg="" bbegtobend="\{" keywords="">
-            <Rules regexbeg="^\s*(abstract|final)?\s*class\s*" regexfunc="\w+" regexend="" bodybegin="\{" bodyend="\}" sep="" />
+            <Rules regexbeg="^\s*class\s+" regexfunc="\w+" regexend="" bodybegin="\{" bodyend="\}" sep="" />
+            <Rules regexbeg="^\s*abstract\s*class\s*" regexfunc="\w+" regexend="" bodybegin="\{" bodyend="\}" sep="" />
+            <Rules regexbeg="^\s*final\s*class\s*" regexfunc="\w+" regexend="" bodybegin="\{" bodyend="\}" sep="" />
         </Group>
         <Group name="INTERFACE" subgroup="" icon="0" child="0" autoexp="4" matchcase="0" fendtobbeg="" bbegtobend="\{" keywords="">
             <Rules regexbeg="^\s*interface\s+" regexfunc="\w+" regexend="" bodybegin="\{" bodyend="\}" sep="" />
+        </Group>
+	<Group name="SLIMROUTE GET" subgroup="" icon="26" child="26" autoexp="4" matchcase="0" fendtobbeg="" bbegtobend="" keywords="">
+            <Rules regexbeg='\$.+[-][&gt;]get*\([&apos;&quot;]' regexfunc="[\w./-:]+" regexend="" bodybegin="\{" bodyend="\}\)\;" sep=";" />
+        </Group>
+        <Group name="SLIMROUTE POST" subgroup="" icon="24" child="24" autoexp="4" matchcase="0" fendtobbeg="" bbegtobend="" keywords="">
+            <Rules regexbeg='\$.+[-][&gt;]post*\([&apos;&quot;]' regexfunc="[\w./-:]+" regexend="" bodybegin="\{" bodyend="\}\)\;" sep=";" />
+        </Group>
+        <Group name="SLIMROUTE PUT" subgroup="" icon="25" child="25" autoexp="4" matchcase="0" fendtobbeg="" bbegtobend="" keywords="">
+            <Rules regexbeg='\$.+[-][&gt;]put*\([&apos;&quot;]' regexfunc="[\w./-:]+" regexend="" bodybegin="\{" bodyend="\}\)\;" sep=";" />
+        </Group>
+        <Group name="SLIMROUTE DELETE" subgroup="" icon="27" child="27" autoexp="4" matchcase="0" fendtobbeg="" bbegtobend="" keywords="">
+            <Rules regexbeg='\$.+[-][&gt;]delete*\([&apos;&quot;]' regexfunc="[\w./-:]+" regexend="" bodybegin="\{" bodyend="\}\)\;" sep=";" />
         </Group>
         <Group name="CONSTANT" subgroup="" icon="8" child="8" autoexp="0" matchcase="0" fendtobbeg="" bbegtobend="" keywords="">
             <Rules regexbeg="^\s*const\s+" regexfunc="[\w_]+" regexend="" bodybegin="" bodyend="$" sep="" />
